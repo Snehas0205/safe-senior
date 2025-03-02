@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Portal</title>
+    <link rel="stylesheet" href="static/css/cyber.css">
+  </head>
+  <body>
+    <header>
+      <h1>Cybersecurity Report</h1>
+      <p>report crime or visit https://www.npci.org.in/register-a-complaint or call at 1930</p>
+    </header>
+
+      <section class="section" id="report-section">
+
+        <div class="section-content">
+          <form id="report-form">
+            <div class="form-group">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact">Contact Information:</label>
+              <input type="text" id="contact" name="contact" required placeholder="Email or Phone Number">
+            </div>
+            
+            <div class="form-group">
+              <label for="crime-type">Type of Cybercrime:</label>
+              <select id="crime-type" name="crime-type" required>
+                <option value="">-- Select Type --</option>
+                <option value="phishing">Phishing</option>
+                <option value="identity-theft">Identity Theft</option>
+                <option value="ransomware">Ransomware</option>
+                <option value="hacking">Hacking</option>
+                <option value="online-harassment">Online Harassment</option>
+                <option value="financial-fraud">Financial Fraud</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="description">Description of Incident:</label>
+              <textarea id="description" name="description" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="file-upload">Upload Evidence (if any):</label>
+              <input type="file" id="file-upload" name="file-upload">
+              <p class="file-info">Max file size: 10MB</p>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit" id="submit-btn">Submit Report</button>
+            </div>
+          </form>
+          <div id="submission-message" class="hidden">
+            <h3>Thank you for your report</h3>
+            <p>Your cybercrime report has been submitted successfully. Authorities will review your case and may contact you for additional information.</p>
+            <button id="new-report-btn">Submit Another Report</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Cybersecurity Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="static/js/cyber.js"></script>
+  </body>
+</html>

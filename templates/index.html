@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAFE SENIOR</title>
+  <link rel="stylesheet" href="static/css/user1.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo-container">
+      <img src="https://i.postimg.cc/15tRzGq2/wmremove-transformed.png" alt="Fighting Shield Logo" class="shield-logo">
+      <span class="brand">SAFE SENIOR</span>
+    </div>
+  
+    <div class="nav-links">
+        <a href="{{ url_for('index') }}" class="nav-item"><i class="fas fa-home"></i> Home</a>
+        <div class="dropdown">
+            <button class="nav-item"><i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i></button>
+            <div class="dropdown-content">
+                <div class="dropdown-item">
+                    <a href="{{ url_for('Healthq') }}"><i class="fas fa-notes-medical"></i> Health</a>
+                </div>
+                <div class="dropdown-item">
+                    <a href="{{ url_for('cyber') }}"><i class="fas fa-shield-virus"></i> Cyber</a>
+                </div>
+                <a href="{{ url_for('diet_nutrition') }}"><i class="fas fa-apple-alt"></i> Diet & Nutrients</a>
+                <a href="{{ url_for('emergency_contact') }}"><i class="fas fa-phone-alt"></i> Emergency Contact</a>
+            </div>
+        </div>
+        <a href="{{ url_for('logout') }}" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Welcome, {{ user.name }}!</h1>
+          <p style="font-family: 'Courier New', Courier, monospace; font-size: x-large;">We're glad to see you.</p>
+          <h3 style="font-size: xx-large;">
+            Growing older,<br>
+            Getting Wiser,<br>
+            Staying Safer!
+          </h3>
+        </div>
+        <div class="hero-video">
+          <div class="video-container">
+            <video controls poster="https://i.postimg.cc/wTb7hq8W/poste.jpg">
+              <source src="static/video/safe.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="features">
+      <div class="features-header">
+        <h2>Our Features</h2>
+        <p>Explore our range of services designed to enhance your experience and provide value.</p>
+      </div>
+      
+      <div class="cards">
+        <!-- Card 1 -->
+        <div class="card">
+          <div class="card-content">
+            <img src="https://i.postimg.cc/DZJdFJcX/Black-and-Red-Modern-Health-Logo.jpg" alt="Health Logo" class="card-icon">
+            <h3>Health Questions</h3>
+            <p>Know about yourself.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('Healthq') }}" class="card-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-small">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card">
+          <div class="card-content">
+            <img src="https://i.postimg.cc/gkNwScVF/Green-Minimalist-Playful-Healthy-Food-Logo.jpg" alt="Diet Logo" class="card-icon">
+            <h3>health_records</h3>
+            <p>See your record and avg of past 3 days.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('health_records') }}" class="card-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-small">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card">
+          <div class="card-content">
+            <img src="https://i.postimg.cc/1XDGnk2R/SOS.jpg" alt="Emergency Logo" class="card-icon">
+            <h3>Emergency Contacts</h3>
+            <p>Important contacts for SOS.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('emergency_contact') }}" class="card-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-small">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card">
+          <div class="card-content">
+            <img src="https://i.postimg.cc/CM8HQ85y/rime.jpg" alt="Caution Logo" class="card-icon">
+            <h3>Report a Cyber Crime</h3>
+            <p>File a report for cyber crimes.</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ url_for('report') }}" class="card-link">
+              Learn more
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-small">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SAFE SENIOR. All rights reserved.</p>
+  </footer>
+</body>
+</html>

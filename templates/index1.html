@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><!--before login-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE SENIOR</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="splash-screen">
+        <div class="logo-animation">
+            <svg viewBox="0 0 24 24" class="shield-svg">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 2.18l7 3.12v4.7c0 4.83-3.4 9.36-7 10.6-3.6-1.24-7-5.77-7-10.6V6.3l7-3.12z"/>
+            </svg>
+        </div>
+    </div>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/15tRzGq2/wmremove-transformed.png" alt="Shield Logo" class="shield-logo">
+            <h1>SAFE SENIOR</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('signup') }}">signup</a></li>
+                <li><a href="#features">Services</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+            <div class="language-selector">
+                <button onclick="changeLanguage('en')" class="active">EN</button>
+                <button onclick="changeLanguage('hi')">हिंदी</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="guide" class="guide-section">
+            <h2 class="translate" data-en="How to Use" data-hi="उपयोग कैसे करें">How to Use</h2>
+            <div class="guide-content">
+                <div class="guide-item">
+                    <h3 class="translate" data-en="Step 1: Register" data-hi="चरण 1: पंजीकरण करें">Step 1: Signup</h3>
+                    <p class="translate" data-en="Create your account to get started" data-hi="शुरू करने के लिए अपना खाता बनाएं">Create your account to get started</p>
+                </div>
+                <div class="guide-item">
+                    <h3 class="translate" data-en="Step 2: Login" data-hi="चरण 2: प्रोफ़ाइल सेट करें">Step 2: login with your credentials</h3>
+                    <p class="translate" data-en="Complete your profile with necessary information" data-hi="आवश्यक जानकारी के साथ अपनी प्रोफ़ाइल पूरी करें">Complete your profile with necessary information</p>
+                </div>
+                <div class="guide-item">
+                    <h3 class="translate" data-en="Step 3: Explore Features" data-hi="चरण 3: सुविधाएं एक्सप्लोर करें">Step 3: Explore Features</h3>
+                    <p class="translate" data-en="Discover all available features and services" data-hi="सभी उपलब्ध सुविधाओं और सेवाओं की खोज करें">Discover all available features and services</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2 class="translate" data-en="Our Features" data-hi="हमारी सुविधाएं">Our Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                  <h3 class="translate" data-en="Latest News About Cybercrime" data-hi="साइबर अपराध के बारे में नवीनतम समाचार">Latest News About Cybercrime</h3>
+                  <p class="translate" data-en="Stay informed with the latest updates on cybercrime incidents and prevention measures" data-hi="साइबर अपराध की घटनाओं और रोकथाम के उपायों पर नवीनतम अपडेट के साथ सूचित रहें">Stay informed with the latest updates on cybercrime incidents</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="translate" data-en="Health Monitoring" data-hi="स्वास्थ्य निगरानी">Health Monitoring</h3>
+                    <p class="translate" data-en="Regular health checkups and monitoring" data-hi="नियमित स्वास्थ्य जांच और निगरानी">Regular health checkups and monitoring</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="translate" data-en="Emergency Alert" data-hi="आपातकालीन अलर्ट">Emergency Alert</h3>
+                    <p class="translate" data-en="Quick emergency response system" data-hi="त्वरित आपातकालीन प्रतिक्रिया प्रणाली">Quick emergency response system</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="translate" data-en="Cyber Tips" data-hi="साइबर टिप्स">Cyber Tips</h3>
+                    <p class="translate" data-en="Stay safe online with these essential cybersecurity tips" data-hi="इन आवश्यक साइबर सुरक्षा युक्तियों के साथ ऑनलाइन सुरक्षित रहें">Stay safe online with these essential cybersecurity tips</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="translate" data-en="Language Interchange" data-hi="भाषा अदला-बदली">Language Interchange</h3>
+                    <p class="translate" data-en="Easily switch between English and Hindi" data-hi="आसानी से अंग्रेज़ी और हिंदी के बीच स्विच करें">Easily switch between English and Hindi</p>
+                </div>
+                <div class="feature-card">
+                    <h3 class="translate" data-en="And Many More Features Available" data-hi="और भी कई सुविधाएं उपलब्ध हैं">And Many More Features Available</h3>
+                    <p class="translate" data-en="Create your account to know more" data-hi="अधिक जानने के लिए अपना खाता बनाएं">Create your account to know more</p>
+                </div>                
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3 class="translate" data-en="Contact Us" data-hi="संपर्क करें">Contact Us</h3>
+                <p>Email: info@safesenior.com</p>
+                <p>Phone: +91 90909090</p>
+                <p>Address: 123 Senior Care Street,India</p>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 SAFE SENIOR. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emergency Contacts</title>
+    <link rel="stylesheet" href="static/css/emergency.css">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Emergency Contacts</h1>
+        <p>Add your emergency contacts and quickly send them an SOS message when needed.</p>
+      </header>
+
+      <main>
+        <section class="emergency-button-section">
+          <button id="emergency-button" class="emergency-button">
+            <span class="pulse"></span>
+            SOS EMERGENCY
+          </button>
+          <p class="emergency-info">Click the button above to send an emergency message to your contacts</p>
+        </section>
+
+        <section class="contacts-section">
+          <div class="contacts-header">
+            <h2>My Contacts</h2>
+            <button id="add-contact-button" class="add-button">Add New Contact</button>
+          </div>
+          
+          <div id="contacts-list" class="contacts-list">
+            <!-- Contacts will be added here dynamically -->
+            <div class="empty-state">
+              <p>No emergency contacts added yet.</p>
+              <p>Add contacts to send emergency messages when needed.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Add Contact Modal -->
+      <div id="add-contact-modal" class="modal">
+        <div class="modal-content">
+          <span class="close-button">&times;</span>
+          <h2>Add Emergency Contact</h2>
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" required placeholder="Full Name">
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone Number</label>
+              <input type="tel" id="contact-phone" required placeholder="+1 (555) 123-4567">
+            </div>
+            <div class="form-group">
+              <label for="contact-relationship">Relationship</label>
+              <select id="contact-relationship" required>
+                <option value="" disabled selected>Select relationship</option>
+                <option value="Family">Family</option>
+                <option value="Friend">Friend</option>
+                <option value="Colleague">Colleague</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-group checkbox-group">
+              <input type="checkbox" id="contact-default">
+              <label for="contact-default">Set as default emergency contact</label>
+            </div>
+            <div class="form-actions">
+              <button type="button" class="cancel-button">Cancel</button>
+              <button type="submit" class="save-button">Save Contact</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Notification -->
+      <div id="notification" class="notification">
+        <p id="notification-message"></p>
+      </div>
+    </div>
+
+    <script src="static/js/emergency.js"></script>
+  </body>
+</html>

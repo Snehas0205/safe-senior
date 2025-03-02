@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cybersecurity Portal</title>
+    <link rel="stylesheet" href="static/css/cyber.css">
+  </head>
+  <body>
+    <header>
+      
+      <h1>Cybersecurity Portal</h1>
+      <p>Stay informed, stay secure   <h3 style="color:#e3e3ef;">
+        <a href="{{ url_for('index') }}" style="color:white;"> Home</a>
+    </h3></p>
+  </header>
+  
+
+    <main id="app">
+      <div class="top-row">
+        <section class="section" id="news-section">
+          <div class="section-header">
+            <h2>Cybercrime News</h2>
+            <button id="refresh-news-btn" class="refresh-btn">Refresh News</button>
+          </div>
+          <div class="section-content" id="news-content">
+            <!-- News content will be populated by JavaScript -->
+            <div class="loader"></div>
+          </div>
+        </section>
+
+        <section class="section" id="tips-section">
+          <h2>Cybersecurity Tips</h2>
+          <div class="section-content" id="tips-content">
+            <div class="tip">
+              <h3>Use Strong Passwords</h3>
+              <p>Create unique passwords with a mix of letters, numbers, and symbols. Consider using a password manager.</p>
+            </div>
+            <div class="tip">
+              <h3>Enable Two-Factor Authentication</h3>
+              <p>Add an extra layer of security to your accounts by enabling 2FA wherever possible.</p>
+            </div>
+            <div class="tip">
+              <h3>Keep Software Updated</h3>
+              <p>Regularly update your operating system and applications to patch security vulnerabilities.</p>
+            </div>
+            <div class="tip">
+              <h3>Be Wary of Phishing Attempts</h3>
+              <p>Don't click on suspicious links or download attachments from unknown sources.</p>
+            </div>
+            <div class="tip">
+              <h3>Secure Your Wi-Fi Network</h3>
+              <p>Use WPA3 encryption and a strong password for your home network.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section class="section" id="report-section">
+        <h2>Report a Cybercrime</h2>
+        <div class="section-content">
+          <form id="report-form">
+            <div class="form-group">
+              <label for="name">Full Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="contact">Contact Information:</label>
+              <input type="text" id="contact" name="contact" required placeholder="Email or Phone Number">
+            </div>
+            
+            <div class="form-group">
+              <label for="crime-type">Type of Cybercrime:</label>
+              <select id="crime-type" name="crime-type" required>
+                <option value="">-- Select Type --</option>
+                <option value="phishing">Phishing</option>
+                <option value="identity-theft">Identity Theft</option>
+                <option value="ransomware">Ransomware</option>
+                <option value="hacking">Hacking</option>
+                <option value="online-harassment">Online Harassment</option>
+                <option value="financial-fraud">Financial Fraud</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="description">Description of Incident:</label>
+              <textarea id="description" name="description" rows="5" required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="file-upload">Upload Evidence (if any):</label>
+              <input type="file" id="file-upload" name="file-upload">
+              <p class="file-info">Max file size: 10MB</p>
+            </div>
+            
+            <div class="form-group">
+              <button type="submit" id="submit-btn">Submit Report</button>
+            </div>
+          </form>
+          <div id="submission-message" class="hidden">
+            <h3>Thank you for your report</h3>
+            <p>Your cybercrime report has been submitted successfully. Authorities will review your case and may contact you for additional information.</p>
+            <button id="new-report-btn">Submit Another Report</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Cybersecurity Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="static/js/cyber.js"></script>
+  </body>
+</html>

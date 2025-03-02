@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Records</title>
+    <link rel="stylesheet" href="static/css/user1.css" />
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="https://i.postimg.cc/15tRzGq2/wmremove-transformed.png" alt="Fighting Shield Logo" class="shield-logo">
+            <span class="brand">SAFE SENIOR</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="{{ url_for('index') }}" class="nav-item"><i class="fas fa-home"></i> Home</a>
+            <div class="dropdown">
+                <button class="nav-item"><i class="fas fa-cogs"></i> Services <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <div class="dropdown-item">
+                        <a href="{{ url_for('Healthq') }}"><i class="fas fa-notes-medical"></i> Health</a>
+                    </div>
+                    <div class="dropdown-item">
+                        <a href="{{ url_for('cyber') }}"><i class="fas fa-shield-virus"></i> Cyber</a>
+                    </div>
+                    <a href="{{ url_for('diet_nutrition') }}"><i class="fas fa-apple-alt"></i> Diet & Nutrients</a>
+                    <a href="{{ url_for('emergency_contact') }}"><i class="fas fa-phone-alt"></i> Emergency Contact</a>
+                </div>
+            </div>
+            <a href="{{ url_for('logout') }}" class="nav-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <h1>Health Records (Past 3 Entries)</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Entry 1</th>
+                    <th>Entry 2</th>
+                    <th>Entry 3</th>
+                    <th>Average</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Do you exercise regularly (at least 3 times a week)?</td>
+                    <td>{{ records[0].q1 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q1 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q1 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q1'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you get at least 7 hours of sleep each night?</td>
+                    <td>{{ records[0].q2 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q2 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q2 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q2'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you eat a balanced diet with fruits and vegetables?</td>
+                    <td>{{ records[0].q3 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q3 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q3 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q3'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you experience frequent headaches?</td>
+                    <td>{{ records[0].q4 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q4 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q4 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q4'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you drink at least 8 glasses of water daily?</td>
+                    <td>{{ records[0].q5 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q5 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q5 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q5'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you experience frequent stress?</td>
+                    <td>{{ records[0].q6 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q6 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q6 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q6'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you have any chronic medical conditions?</td>
+                    <td>{{ records[0].q7 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q7 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q7 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q7'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you smoke or use tobacco products?</td>
+                    <td>{{ records[0].q8 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q8 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q8 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q8'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you consume alcohol regularly?</td>
+                    <td>{{ records[0].q9 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q9 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q9 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q9'] }}</td>
+                </tr>
+                <tr>
+                    <td>Do you have a family history of heart disease?</td>
+                    <td>{{ records[0].q10 if records|length > 0 else 'N/A' }}</td>
+                    <td>{{ records[1].q10 if records|length > 1 else 'N/A' }}</td>
+                    <td>{{ records[2].q10 if records|length > 2 else 'N/A' }}</td>
+                    <td>{{ averages['q10'] }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
